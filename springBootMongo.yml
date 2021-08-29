@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: ReplicationController
 metadata:
   labels:
@@ -32,7 +32,7 @@ spec:
               key: password       
 ---
 # Node Port Service For SpringApp
-apiVersion: v1
+apiVersion: apps/v1
 kind: Service
 metadata:
   name: springboot
@@ -45,7 +45,7 @@ spec:
     app: springboot
 ---
 # Mongo RC with host path Volume
-apiVersion: v1
+apiVersion: apps/v1
 kind: ReplicationController
 metadata:
   name: mongo-controller
@@ -83,7 +83,7 @@ spec:
          path: /tmp/dbbackup
 ---
 # Mongo Node Port RC
-apiVersion: v1
+apiVersion: apps/v1
 kind: Service
 metadata:
   name: mongo
